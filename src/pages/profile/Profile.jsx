@@ -1,4 +1,4 @@
-import "./profile";
+import "./Profile.scss";
 
 const Profile = () => {
   return <div className="profile">Profile</div>;

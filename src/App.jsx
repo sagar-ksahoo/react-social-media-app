@@ -17,10 +17,10 @@ import Leftbar from "./components/leftbar/Leftbar";
 import Rightbar from "./components/rightbar/Rightbar";
 import { DarkModeContext } from "./context/darkModeContext";
 import { useContext } from "react";
+import { AuthContext } from "./context/authContext";
 
 function App() {
-  const currentUser = true;
-
+  const { currUser } = useContext(AuthContext);
   const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {
@@ -39,7 +39,7 @@ function App() {
   };
 
   const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
+    if (!currUser) {
       return <Navigate to="/login" />;
     }
 
